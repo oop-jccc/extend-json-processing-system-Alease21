@@ -7,8 +7,8 @@ public class TodoItemProcessor : IJsonProcessor
 {
     public bool CanProcess(JObject json)
     {
-        var canProcess = json.ContainsKey(nameof(TodoItem.Title)) && json.ContainsKey(nameof(TodoItem.IsComplete));
-        return canProcess;
+        return json.ContainsKey(nameof(TodoItem.Title)) &&
+        json.ContainsKey(nameof(TodoItem.IsComplete));
     }
 
     public object? Process(JObject json)
