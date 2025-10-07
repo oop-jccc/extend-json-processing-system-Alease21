@@ -10,7 +10,6 @@ public class UserJsonProcessor : IJsonProcessor
     {
         return json.ContainsKey(nameof(User.Name)) && json.ContainsKey(nameof(User.Email));
     }
-
     public object? Process(JObject json)
     {
         if (!CanProcess(json)) return null;
